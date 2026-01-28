@@ -12,14 +12,8 @@ provider "aws" {
   region = "us-east-1"
 }
 
-#create s3 bucket
-
-resource "aws_s3_bucket" "first_bucket" {
-  bucket = "techtutorialsforterraform-bucket"
-
-  tags = {
-    Name        = "My bucket"
-    Environment = "Dev"
-  }
+# Create a VPC
+resource "aws_vpc" "example" {
+  cidr_block = "10.0.0.0/16"
 }
 
